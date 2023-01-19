@@ -60,7 +60,13 @@ html,body{
 }
 .center p{
    margin-right: 25px;
+   
 }
+.center p a{
+    text-decoration: none;
+    color: black;
+    
+ }
 #input{
     margin-top: 7px;
 }

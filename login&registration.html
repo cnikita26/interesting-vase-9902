@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--css icons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!---->
+    <title>Login/Signup</title>
+</head>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300&display=swap');
+   *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+   }
+  
+    html,body{
+    height:100%;
+    width:100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: #ffffff;
+}
+
+.allcont{
+    background-color: #d2d2d2;
+    width:100%;
+    gap:20%;
+    margin: auto;
+    height:60px;
+    margin-top: 5px;
+
+}
+#headline{
+   font-size: 20px;
+   margin-left: 40vw;
+}
+
+.flex{
+    display: flex;
+}
+.left img{
+    width:200px;
+    height:50px;
+    margin-top: 15px;
+}
+/* .left{
+    justify-content: flex-end;
+    gap:20px;
+} */
+.left input{
+    width:650px;
+    margin-right: 150px;
+    height:35px;
+    margin-left: 130px;
+   text-align: center;
+}
+.all{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    display: block;
+    margin-top: 10px;
+    height: 120px;
+
+}
+.left div img{
+    /* margin-top: 25px; */
+    width:25px;
+    height:25px;
+    margin: auto;
+    display: block;
+    margin-left: 20px;
+  
+}
+.center p{
+   margin-right: 25px;
+   
+}
+.center p a{
+   text-decoration: none;
+   color: black;
+   
+}
+#input{
+    margin-top: 7px;
+}
+#logo{
+    margin-top: 4px;
+    margin-left: 30px;
+}
+.types{
+    display:flex;
+    justify-content: space-evenly;
+    /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
+    font-size: 15px;
+}
+.login-signup-page{
+    display: flex;
+    justify-content: space-around;
+}
+
+.login_signup_cont{
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    background: #d2d2d2;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    margin: 60px 20px 30px 150px;
+}
+.signup_cont{
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    background: #d2d2d2;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    margin: 60px 150px 30px 20px ;
+}
+.login_signup_cont .signup_login_form{
+    padding: 50px;
+}
+.signup_cont .signup_form{
+    padding: 50px;
+}
+.login_signup_cont .signup_login_form .title{
+    position: relative;
+    font-size: 28px;
+    font-weight:300;
+}
+.signup_cont .signup_form .title{
+    position: relative;
+    font-size: 28px;
+    font-weight:300;
+}
+.login_signup_cont .signup_login_form .login p{
+    font-size: 12px;
+}
+.signup_cont .signup_form .signup p{
+    font-size: 12px;
+}
+
+.signup_login_form .input-filed{
+    position: relative;
+    height: 50px;
+    width: 100px;
+    margin-top: 30px;
+}
+.signup_form .input-filed{
+    position: relative;
+    height: 50px;
+    width: 100px;
+    margin-top: 30px;
+}
+.input-filed input{
+    position: absolute;
+    height: 50px;
+    width: 370px;
+    padding: 0 35px;
+    border: 2px solid black;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.input-filed i{
+    position: absolute;
+    top: 50%;
+    transform:translateY(-50%);
+    font-size: 23px;
+}
+.input-filed i.showHidePw{
+    right:-300px;
+}
+.signup_login_form .checkbox-text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.checkbox-text .checkbox-content{
+    display: flex;
+    text-align: center;
+}
+.checkbox-content input{
+    margin: 3px 8px -2px 4px;
+    accent-color: #fff;
+    height: 17px;
+    width: 20px;
+    border: 1px solid black;
+}
+.signup_login_form .text{
+    font-size: 14px;
+}
+.signup_login_form a{
+    color: black;
+}
+.signup_login_form .btn{
+    margin-top:35px ;
+}
+.signup_form .btn{
+    margin-top:35px ;
+}
+.signup_login_form .btn input{
+    border: none;
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    border-radius: 4px;
+    background-color: rgb(98, 43, 139);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.signup_form .btn input{
+    border: none;
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    border-radius: 4px;
+    background-color: rgb(98, 43, 139);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn input:hover{
+    background-color:rgb(46, 21, 66) ;
+}
+.signup_login_form .add-info{
+    margin-top: 50px;
+}
+.signup_form .add-info{
+    margin-top: 50px;
+}
+.add-info .info-one{
+    font-weight: 500;
+    text-align:center;
+}
+.add-info .info-two{
+    text-align:center;
+}
+.rule{
+    display: flex;
+    justify-content: space-evenly;
+}
+.pass-info ul{
+   margin-left: 20px;
+}
+.signup-checkbox-text{
+    margin-top: 30px;
+}
+.signup-checkbox-text .text{
+    font-size: 11px;
+}
+.id-details{
+    font-weight: 400;
+}
+.white-space{
+    margin-top: 50px;
+  
+    background-color:#ffffff;
+    height: 30px;
+    width: 505px;
+    margin-left: -51px;
+}
+.check-order{
+    margin-top: 40px;
+
+}
+.check-order p{
+    margin-top: 40px;
+}
+.checkbox{
+    margin-top: 20px;
+    
+}
+.checkbox input{
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+
+}
+.checkbox input:checked{
+    background-color: #40a9f4;
+}
+.apply-code{
+    display: flex;
+    margin-top: 15px ;
+    justify-content: center;
+}
+.apply-code div img{
+    width: 50px;
+    margin: 1px 10px 10px 10px;
+}
+.apply-code div p{
+    font-size: 20px;
+}
+/* footer */
+.table{
+    background-color: #f5f5f5;
+    gap:20px;
+    width:100%;
+    margin-top: 10px;
+
+}
+.body{
+    text-align: center;
+}
+.body td,.body th{
+    font-size: 20px;
+    
+}
+.head th{
+    font-size: 25px;
+   
+}
+#ship,#cat{
+    font-size: 25px;
+}
+#last{
+    width:100%;
+}
+
+</style>
+<body>
+     <header class="header">
+        <nav class="navbar">
+            <h7 id="headline">Enjoy our great international shipping rates</h7>
+            <script src="index.js"></script>
+           <table class="allcont">
+            <thead>
+                <tr class="image">
+                    <td><img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/-/Sites-oss-Library/default/dw9abec74c/oss-images/brand-header-images/os_logo_uc.svg?yocs=j_" alt="err"></td>
+                    <td><img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/-/Sites-oss-Library/default/dwaafbdd54/oss-images/brand-header-images/ww_logo_uc.svg?yocs=j_" alt=""></td>
+                    <td><img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/-/Sites-oss-Library/default/dwbc6708db/oss-images/brand-header-images/rm_logo_uc.svg?yocs=j_" alt=""></td>
+                    <td><img src="https://www.catherines.com/on/demandware.static/-/Sites-oss-Library/default/dwce39c953/oss-images/brand-header-images/ca_favicon.svg" alt=""></td>
+                    <td><img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/-/Sites-oss-Library/default/dw8e07f5e0/oss-images/brand-header-images/jl_logo_uc.svg?yocs=j_" alt=""></td>
+                    <td><img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/-/Sites-oss-Library/default/dwdf4049fe/oss-images/brand-header-images/el_logo_uc.svg?yocs=j_" alt=""></td>
+                    <td><img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/-/Sites-oss-Library/default/dw01e10ab2/oss-images/brand-header-images/jv_logo_uc.svg?yocs=j_" alt=""></td>
+                    <td><img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/-/Sites-oss-Library/default/dwf83ae052/oss-images/brand-header-images/aa_logo_uc.svg?yocs=j_" alt=""></td>
+                    <td><img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/-/Sites-oss-Library/default/dw741011b4/oss-images/brand-header-images/ia_logo_uc.svg?yocs=j_" alt=""></td>
+                    <td><img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/-/Sites-oss-Library/default/dw74afbac5/oss-images/brand-header-images/sh_logo_uc.svg?yocs=j_" alt=""></td>
+                    <td><img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/-/Sites-oss-Library/default/dwe78bd437/oss-images/brand-header-images/sa_logo_uc.svg?yocs=j_" alt=""></td>
+                    <td><img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/-/Sites-oss-Library/default/dw1e45174f/oss-images/brand-header-images/bh_logo_uc.svg?yocs=j_" alt=""></td>
+                    <td><img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/-/Sites-oss-Library/default/dw2cff73fa/oss-images/brand-header-images/ks_logo_uc.svg?yocs=j_" alt=""></td>
+                    <td><img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/-/Sites-oss-Library/default/dw24710b29/oss-images/brand-header-images/fboutlet-090722.svg?yocs=j_" alt=""></td>
+                </tr>
+            </thead>
+           </table>
+           <div class="all">
+            <!-- <div class="right flex">
+                
+            </div> -->
+            <div class="left flex">
+                <img id="logo" src="Images\js201 logo.jpg" alt="">
+                <input id="input" type="text" placeholder="Keyword or catlog item#">
+                <div class="center">
+                    <img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/Sites-oss-Site/-/default/dw93bd7266/images/common/icons/icon-catalog.svg?yocs=j_" alt="">
+                   <p>CATALOG  </p>
+                </div>
+                <div class="center">
+                    <img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/Sites-oss-Site/-/default/dw3a534e16/images/common/icons/icon-card.svg?yocs=j_" alt="">
+                    <p>CARD</p>
+                </div>
+                <div class="center">
+                    <img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/Sites-oss-Site/-/default/dw8fc793b7/images/common/icons/icon-account.svg?yocs=j_" alt="">
+                    <p><a href="login&registration.html">SIGN IN</a></p>
+                </div>
+                <div class="center">
+                    <img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/Sites-oss-Site/-/default/dw4c4b66fe/images/common/icons/icon-bag-filled.svg?yocs=j_" alt="">
+                    <p>MY BAG</p>
+                </div>
+            </div>
+            <div class="types">
+                <div>FEATURED</div>
+                <div>TOPS & SWEATERS</div>
+                <div>BOTTOMS</div>
+                <div>DRESSES</div>
+                <div>ACTIVE</div>
+                <div>COATS & JACKETS</div>
+                <div>SLEEPWEAR</div>
+                <div>BRAS & INTIMATES</div>
+                <div>SHOES & ACCESSORIES</div>
+                <div>SWIMWEAR</div>
+                <div>HOME</div>
+                <div>CLEARANCE</div>
+               </div>
+
+           </div>
+        </nav>
+    </header>
+    <div class="apply-code">
+        <div><img src="https://www.catherines.com/on/demandware.static/-/Sites-oss-Library/default/dwe12903b5/ca-images/plcc-images/platinum/ca-plcc-platinum-icon.svg" alt=""></div>
+        <div>
+        <p>
+            <b> Save $20</b>on your first purchase of $25+ when you open and use a Catherines Platinum Credit Card!1,* 
+           <a href="#">Apply Now</a>/<a href="#">Learn More</a>
+        </p>
+        </div>
+    </div>
+
+    <!--Signup Login Form-->
+ <div class="login-signup-page">
+    <div class="login_signup_cont">
+        <div class="signup_login_form">
+            <div class="login">
+                <span class="title">Welcome Back!</span>
+                <p>If you are a registered user, please enter your email and password</p>
+                <form action="#">
+                    <div class="input-filed">
+                        <input type="email" placeholder="Email">
+                    </div>
+                    <div class="input-filed">
+                        <input type="password" class="password" placeholder="Password">
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+
+                    <!--Signin btn-->
+
+                    <div class="input-filed btn">
+                        <input type="button" value="SIGN IN">
+                    </div>
+
+                    <!--Checkbox-->
+   
+                   <div class="checkbox-text">
+                     <div class="checkbox-content">
+                         <input type="checkbox" id="logCheck">
+                         <label for="logCheck" class="text">Remember me</label>
+                     </div>
+                     
+                     <a href="#" class="text">FORGOT PASSWORD</a> 
+                   </div>
+
+                </form>
+
+                <div class="add-info">
+                    <p class="info-one">You can login with the same email & password as:</p>
+                    <p class="info-two">OneStopPlus®, Woman Within®, Roaman's®, Catherines®, Jessica London®, Ellos,® June + Vie™, Active For All™, Intimates For All™, Shoes For All™, Swimsuits For All®, BrylaneHome®, KingSize® and FullBeauty Outlet®.</p>
+                </div>
+
+                <div class="white-space"></div>
+
+                <div class="check-order">
+                    <div class="order-content">
+                        <div class="order">
+                            <span class="title">Check an Order</span>
+                            <p>See order even if you are not a registered user. Enter the order number, email address and billing zipcode.</p>
+                            <form action="#">
+
+                                <div class="checkbox">
+                                    <input type="checkbox" id="logCheck">
+                                    <label for="logCheck" class="text">Domestic Order status</label>
+                                </div>
+
+                                <div class="checkbox">
+                                    <input type="checkbox" id="logCheck">
+                                    <label for="logCheck" class="text">International Order status</label>
+                                </div>
+
+                                <div class="input-filed">
+                                    <input type="text" placeholder="Order Number*">
+                                </div>
+            
+                                <div class="input-filed">
+                                    <input type="text" placeholder="Order Email*">
+                                </div>
+            
+                                <div class="input-filed">
+                                    <input type="email" placeholder="Billing zip code*">
+                                </div>
+
+                                <div class="input-filed btn">
+                                    <input type="button" value="LOOK UP">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!--Signup form-->
+
+    <div class="signup_cont">
+        <div class="signup_form">
+            <div class="signup">
+                <span class="title">I'm a New Customer</span>
+                <p>Enjoy your benefits and get rewards.</p>
+                <form action="#" id="signup_frm">
+                    <div class="input-filed">
+                        <input type="text" id="name" placeholder="First Name*">
+                    </div>
+
+                    <div class="input-filed">
+                        <input type="text" id="lname" placeholder="Last Name*">
+                    </div>
+
+                    <div class="input-filed">
+                        <input type="email" id="email" placeholder="Email Address*">
+                    </div>
+
+                    <div class="input-filed">
+                        <input type="email" id="c-email" placeholder="Confirm Email Address*">
+                    </div>
+
+                    <div class="input-filed">
+                        <input type="password" id="pass" class="password" placeholder="Password">
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+
+                    <div class="rule">
+                        <ul><li><p>8-16 Characters</p></li></ul>
+                        <ul><li><p>1-Letter</p></li></ul>
+                        <ul><li><p>1 Number</p></li></ul>
+                    </div>
+
+                    <div class="input-filed">
+                        <input type="password" id="c-pass" class="password" placeholder="confirm Password">
+                        <!-- <i class="uil uil-eye-slash showHidePw"></i> -->
+                    </div>
+                    <div class="pass-info">
+                        <ul>
+                            <li><p>Password should match</p></li>
+                        </ul>
+                    </div>
+
+                    <div class="input-filed">
+                        <input type="text" id="month" placeholder="Birthday Month(optional)">
+                    </div>
+
+                    <div class="input-filed">
+                        <input type="text" id="customer-id" placeholder="Customer Id(optional)">
+                    </div>
+
+                    <p class="id-details">Found on the back of your catalog</p>
+
+                    <!--Checkbox-->
+   
+                   <div class="signup-checkbox-text">
+                    <div class="checkbox-content">
+                        <input type="checkbox" id="logCheck">
+                        <label for="logCheck" class="text">Yes, Enroll me in Catherines Rewards! Its FREE. Earn rewards on your purchases, plus get other great benefits. Yes, I agree to the Catherines Rewards Terms and Conditions.</label>
+                    </div>
+                    
+                    <div class="checkbox-content">
+                        <input type="checkbox" id="logCheck">
+                        <label for="logCheck" class="text">Email me about the latest deals, new items & more.</label>
+                    </div>
+                  </div>
+
+                    <!--Signun btn-->
+
+                    <div class="input-filed btn">
+                        <input type="button" value="CREATE ACCOUNT">
+                    </div>
+
+                </form>
+
+                <div class="add-info">
+                    <p class="info-one">By creating an account with us, you confirm that you have read, understood and accept the Terms of Use, Returns Policy, and Private Policy</p>
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+ </div>
+   
+ <!--footer-->
+
+ <div >
+    <img id="first" src="Images\second.png" alt="">
+</div>
+<table class="table">
+    <thead class="head">
+      <tr>
+       <th>Customer Service</th>
+       <th>My Account</th>
+       <th>Credit Card</th>
+       <th>Catherines</th>
+      </tr>
+    </thead>
+   <tbody class="body">
+    <tr>
+        <td>Contact Us</td>
+        <td>Sign In/Register</td>
+        <td>Apply Now</td>
+        <td>About Us</td>
+    </tr>
+    <tr>
+        <td>Shopping Info</td>
+        <td>Track My Order</td>
+        <td>Learn More</td>
+        <td>About Fullbeauty Brands</td>
+    </tr>
+    <tr>
+        <td>Shipping Info</td>
+        <td>Return Order</td>
+        <td>Pay My Bill</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Returns</td>
+        <td>Order History</td>
+        <td></td>
+        <th id="ship">Shipping To</th>
+    </tr>
+    <tr>
+        <td>Exchanges</td>
+        <td>Wishlist</td>
+        <th  id="cat">Catalog</th>
+        <td>Singapore</td>
+    </tr>
+    <tr>
+        <td>Billing & Payments</td>
+        <td>Offers & Coupons</td>
+        <td>Order From Catalog</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Size & Fit</td>
+        <td>Rewards</td>
+        <td>Request a Catalog</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>International</td>
+        <td></td>
+        <th></th>
+        <td></td>
+    </tr>
+    <tr>
+        <td>FAQ</td>
+        <td></td>
+        <th></th>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Rewards</td>
+        <td></td>
+        <th></th>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Perks</td>
+        <td></td>
+        <th></th>
+        <td></td>
+    </tr>
+   </tbody>
+</table>
+<div>
+    <img id="last" src="Images\last.png" alt="">
+</div>
+</body>
+<!-- js part -->
+<script>
+    let login = document.querySelector('.login_signup_cont')
+    let PwshowHide = document.querySelectorAll('.showHidePw')
+    let pwfileds = document.querySelectorAll('.password')
+
+    // hide password & change icon
+    PwshowHide.forEach(eyeIcon =>{
+        eyeIcon.addEventListener("click", ()=>{
+            pwfileds.forEach(pwfiled =>{
+                if(pwfiled.type==="password"){
+                    pwfiled.type="text"
+
+                    PwshowHide.forEach(Icon =>{
+                        Icon.classList.replace("uil-eye-slash","uil-eye")
+                    })
+                }else{
+                    pwfiled.type="password"
+
+                    PwshowHide.forEach(Icon =>{
+                        Icon.classList.replace("uil-eye","uil-eye-slash")
+                    })
+                }
+            })
+        })
+    })
+    
+
+</script>
+</html>
