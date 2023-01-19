@@ -110,58 +110,107 @@
             background: white;
         }
 /* ================================== */
-        #filterby>label>span{
-            color: black;
-            float: right;
-        }
-        #filterby>label>span:hover{
-            text-decoration: none;
-        }
-        #filterby>label{
-            cursor: pointer;
-            
-        }
-        .colorcheck{
-            display: none;
-        }
-        
-        #filterby>label>ul{
-            
-            text-decoration: none;
-        }
-        #filterby>label>ul li{
-            display: block;
-            text-decoration: none;
-            padding: 8px 0px;
-            font-size: 15px;
-        }
-        #checker{
-            scale: 1.3;
-            background-color: #003fa3;
-            margin-right: 15px;
-        }
-        label ul{
-            
-            position: absolute;
-            display: none;
-        }
-        #subColor{
-            display: none;
-            margin-top: 30px;
-            padding-left: 20px;
-        }
-        [id^=btn-1]:checked + #subColor{
-            display: block;
-        }
-        #color{
+        #color1{
             display: flex;
         }
-        #color>img{
-            scale: 7%;
-            margin-top: -63px;
-            padding-right: 80px;
+       
+        .button{
+            width: 160px;
         }
+        .arrow{
+            width: 60px;
+
+        }
+        .arrow img{
+            width: 100%;
+            scale: .3;
+            padding: 0;
+            margin-top: 5px;
+            margin-bottom: -9px;
+        }
+        
 /* ================================== */       
+        #contents{
+            display: flex;
+            margin-bottom: 50px;
+        }
+        #container{
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            gap: 20px;
+            width: 90%;
+            padding: 20px;
+        }
+        #star{
+            color: goldenrod;
+            
+        }
+        #card #title,#mrp,#rating{
+            padding: 0px 5px;
+        }
+        #container #card{
+            border: .5px solid rgb(233, 233, 233);
+        }
+        #container #card:hover{
+            opacity: 90%;
+            
+        }
+        #container img{
+            width: 100%;
+            height: 300px;
+        }
+        #card #title{
+            font-size: 15px;
+            font-weight: 600;
+        }
+        #card #title:hover{
+            text-decoration: 1.5px underline;
+            
+        }
+  /* ================================== */  
+        #buttons{
+            margin: 10px;
+            background-color: white;
+            color: black;
+            border-radius: 25px;
+            padding: 15px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border: none;
+            font-size: 15px;
+            font-weight: 100;
+            color: #7e7e7e;
+        }
+        #buttons:hover{
+            cursor: pointer;
+            border: 2px solid #3a2a7c;
+        }
+        #related{
+            margin-top: 0px;
+            background-color: #f5f5f5;
+            margin: -3%;
+            padding: 15px 40px;
+        }
+        #cartdiv{
+            display: flex;
+            margin: 0px;
+            justify-content: space-between;
+            padding: 0px 10px 0px 0px;
+            align-items: center;
+        }
+        #cartdiv #add{
+            height: 20px;
+            background-color: #3a2a7c;
+            color: #f5f5f5;
+            border: none;
+            border-radius: 5px;
+            height: 30px;
+            padding: 0px 15px;
+        }
+        #add:hover{
+            border: 2px solid black;
+
+        }
         
         
     </style>
@@ -171,7 +220,7 @@
     <div id="itemLocation">
         <p><span>Home</span> /  Plus Size Tops & Sweaters</p>
     </div>
-    <div>
+    <div id="contents">
         
         <div id="sort">
             <h2 id="type">Plus Size Tops & Sweaters</h2>
@@ -199,63 +248,223 @@
                 <h3 id="bold">SORT BY</h3>
                 <label class="sortby">
                     <input type="radio"  name="radio">Featured 
-                    <span class="checkmark"></span>
+                    <span class="checkmark" id="c1"></span>
                 </label>
                 <label class="sortby">
                     <input type="radio"  name="radio">Top Rated 
-                    <span class="checkmark"></span>
+                    <span class="checkmark" id="c2"></span>
                 </label>
                 <label class="sortby">
                     <input type="radio"  name="radio">Highest Price 
-                    <span class="checkmark"></span>
+                    <span class="checkmark" id="c3"></span>
                 </label>
                 <label class="sortby">
                     <input type="radio"  name="radio">Lowest Price 
-                    <span class="checkmark"></span>
+                    <span class="checkmark" id="c4"></span>
                 </label>
             </div>
             <hr>
             <div id="filterby">
                 <h3 id="bold">FILTER BY</h3>
-                <label for="btn-1" id="color" class="button">Color
-                    <img src="https://iili.io/Ha4vpGS.jpg" onclick="imgRotate()" id="arrow">
-                    <input type="checkbox" name="" id="btn-1" class="colorcheck">
-                    <ul id="subColor">
-                        <li><input type="checkbox" name="" id="checker"> Black</li>
-                        <li><input type="checkbox" name="" id="checker"> Blue</li>
-                        <li><input type="checkbox" name="" id="checker"> White</li>
-                        <li><input type="checkbox" name="" id="checker"> Purple</li>
-                        <li><input type="checkbox" name="" id="checker"> Grey</li>
-                        <li><input type="checkbox" name="" id="checker"> Pink</li>
-                        <li><input type="checkbox" name="" id="checker"> Orange</li>
-                        <li><input type="checkbox" name="" id="checker"> Yellow</li>
-                    </ul>
-                </label>
-                <label for="btn-1" id="color" class="button">Color
-                    <img src="https://iili.io/Ha4vpGS.jpg" onclick="imgRotate()" id="arrow">
-                    <input type="checkbox" name="" id="btn-1" class="colorcheck">
-                    <ul id="subColor">
-                        <li><input type="checkbox" name="" id="checker"> Black</li>
-                        <li><input type="checkbox" name="" id="checker"> Blue</li>
-                        <li><input type="checkbox" name="" id="checker"> White</li>
-                        <li><input type="checkbox" name="" id="checker"> Purple</li>
-                        <li><input type="checkbox" name="" id="checker"> Grey</li>
-                        <li><input type="checkbox" name="" id="checker"> Pink</li>
-                        <li><input type="checkbox" name="" id="checker"> Orange</li>
-                        <li><input type="checkbox" name="" id="checker"> Yellow</li>
-                    </ul>
-                </label>
+                <div id="color1">
+                    <div id="color">
+                        <div  class="button">
+                            <p>Color</p> 
+                        </div>
+                        <div  class="button">
+                            <p>Size</p>
+                        </div>
+                        <div  class="button">
+                            <p>Brand</p>
+                        </div>
+                        <div  class="button">
+                            <p>Fabric Material</p>
+                        </div>
+                        <div  class="button">
+                            <p>Features</p>
+                        </div>
+                        <div  class="button">
+                            <p>Occasion</p>
+                        </div>
+                        <div  class="button">
+                            <p>Product Type</p>
+                        </div>
+                        <div id="color" class="button">
+                            <p>Length</p>
+                        </div>
+                        <div  class="button">
+                            <p>Sleeve Length</p>
+                        </div>
+                        <div  class="button">
+                            <p></p>Style</p> 
+                        </div>
+                    </div>
+                    <div class="arrow">
+                        <img src="https://iili.io/Ha4vpGS.jpg" id="arrow">
+                        <img src="https://iili.io/Ha4vpGS.jpg" id="arrow">
+                        <img src="https://iili.io/Ha4vpGS.jpg" id="arrow">
+                        <img src="https://iili.io/Ha4vpGS.jpg" id="arrow">
+                        <img src="https://iili.io/Ha4vpGS.jpg" id="arrow">
+                        <img src="https://iili.io/Ha4vpGS.jpg" id="arrow">
+                        <img src="https://iili.io/Ha4vpGS.jpg" id="arrow">
+                        <img src="https://iili.io/Ha4vpGS.jpg" id="arrow">
+                        <img src="https://iili.io/Ha4vpGS.jpg" id="arrow">
+                        <img src="https://iili.io/Ha4vpGS.jpg" id="arrow">
+                    </div>
+                </div>
+                    
+                
+                
+                
+               
 
             </div>
             
         </div>
         <div id="container">
-
+            
         </div>
+    </div>
+    <div id="related">
+        <div>
+            <h3>Related items</h3>
+            <div>
+                <button id="buttons">Scoopneck Top</button>
+                <button id="buttons">Keyhole Top</button>
+                <button id="buttons">Suprema Embroidered Scoopneck Tee</button>
+                <button id="buttons">V-Neck Top</button>
+                <button id="buttons">Waffle Knit Top</button>
+            </div>
+        </div>
+        <div>
+            <h3>Related Categories</h3>
+            <div>
+                <button id="buttons">Long Denim Jackets</button>
+                <button id="buttons">Womens Button Cardigans</button>
+                <button id="buttons">Button Cardigans</button>
+                <button id="buttons">Long Kimonos</button>
+                <button id="buttons">Lace Camis</button>
+            </div>
+        </div>
+        
+        
     </div>
     
 </body>
 </html>
-<script src="">
-       
+<script >
+    let cart_Items=JSON.parse(localStorage.getItem("cartdata")) || []
+
+    let cardsData
+    fetch("https://super-paint-flamingo.glitch.me/WomensData")   
+    .then((res)=>res.json())
+    .then((data)=>{
+        let cardobj = data.map((item) => ({
+          title: item.title,
+          mrp: item.mrp,
+          price: item.price,
+          image: item.image,
+          rating: item.rating,
+          review: item.review
+          
+
+        }));
+        cardsData=cardobj
+        console.log(cardsData)
+        renderProducts(cardsData)
+          
+    })
+    document.querySelector("#c1").addEventListener("click",function(){
+        let newData=cardsData.reverse()
+        renderProducts(newData)
+    })
+    document.querySelector("#c2").addEventListener("click",function(){
+        let newData=cardsData.sort((a,b)=>{return b.rating-a.rating});
+        renderProducts(newData)
+    })
+    document.querySelector("#c3").addEventListener("click",function(){
+        let newData=cardsData.sort((a,b)=>{return b.price-a.price});
+        renderProducts(newData)
+    })
+    document.querySelector("#c4").addEventListener("click",function(){
+        let newData=cardsData.sort((a,b)=>{return a.price-b.price});
+        renderProducts(newData)
+    })
+
+
+    let container=document.querySelector("#container")
+    console.log(container)
+    
+    function renderProducts(data){
+        container.innerHTML=null
+        data.forEach(function(ele){
+
+            if(ele.title!=undefined && ele.image!=undefined && ele.mrp!=undefined && ele.rating!=undefined){
+                let card=document.createElement("div")
+                card.setAttribute("id","card")
+
+                let image = document.createElement("img")
+                image.setAttribute("src",ele.image)
+
+                let title = document.createElement("p")
+                title.textContent=ele.title
+                title.setAttribute("id","title")
+
+                let mrp = document.createElement("p")
+                mrp.textContent=`Rs. ${ele.mrp}/-`
+                mrp.setAttribute("id","mrp")
+
+                let price = document.createElement("p")
+                price.textContent=ele.price
+                price.setAttribute("id","card")
+
+                let rating = document.createElement("p")
+                rating.innerHTML=`Rating ${ele.rating}<span id ="star">&#9733</span>`
+                rating.setAttribute("id","rating")
+
+                let cartdiv=document.createElement("div")
+                cartdiv.setAttribute("id","cartdiv")
+
+                // let review = document.createElement("p")
+                // review.textContent=ele.review
+                // review.setAttribute("id","review")
+
+                let button = document.createElement("button")
+                button.textContent="ADD TO BAG "
+                button.setAttribute("id","add")
+
+                button.addEventListener("click",function(){
+                    let cart_Items=JSON.parse(localStorage.getItem("cartdata")) || []
+                    let present=false
+                    for(i=0;i<cart_Items.length;i++){
+                        if(cart_Items[i].mrp===ele.mrp){
+                            present=true
+                            break;
+                        }
+                    }
+                    if(present===true){
+                        alert("Product Already In Bag")
+                    }
+                    else{
+                       cart_Items.push(ele)
+                        localStorage.setItem("cartdata",JSON.stringify(cart_Items));
+                        alert("Product Added to Bag") 
+                    }
+
+
+                    
+                })    
+        
+                
+                cartdiv.append(rating,button)
+                card.append(image,title,mrp,cartdiv)
+                document.querySelector("#container").append(card)
+            }
+            
+
+        })
+
+    }
+
+
 </script>
