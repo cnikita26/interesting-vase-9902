@@ -1,8 +1,8 @@
 let globleData = []; 
-
+const url = "https://super-paint-flamingo.glitch.me/WomensData"
 counttheproducts()
 function counttheproducts(){
-let url = "https://server-com-wzh0.onrender.com/products"
+
 fetch(url)
 .then((res)=>{
     return res.json()
@@ -51,8 +51,10 @@ document.getElementById("button").addEventListener("click",()=>{
     let obj = {
         category : Category.value,
         title : Title.value,
-        original_price : Price.value,
-        images : [Image.value]
+        price : Number(Price.value),
+        image : Image.value,
+        rating:3.5,
+        review:"review"
     }
     fetch(url,{
         method:'POST',

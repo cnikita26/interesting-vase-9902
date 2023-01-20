@@ -361,7 +361,7 @@
     .then((data)=>{
         let cardobj = data.map((item) => ({
           title: item.title,
-          mrp: item.mrp,
+          mrp: item.price,
           price: item.price,
           image: item.image,
           rating: item.rating,
@@ -399,7 +399,7 @@
         container.innerHTML=null
         data.forEach(function(ele){
 
-            if(ele.title!=undefined && ele.image!=undefined && ele.mrp!=undefined && ele.rating!=undefined){
+            if(ele.title!=undefined && ele.image!=undefined && ele.mrp!=undefined && ele.rating!=undefined && ele.mrp>0){
                 let card=document.createElement("div")
                 card.setAttribute("id","card")
 
@@ -451,8 +451,6 @@
                         alert("Product Added to Bag") 
                     }
 
-
-                    
                 })    
         
                 
