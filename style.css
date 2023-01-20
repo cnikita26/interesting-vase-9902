@@ -10,14 +10,15 @@ html,body{
     background-color: #d2d2d2;
     width:100%;
     gap:20%;
-    margin: auto;
+    /* margin: auto; */
     height:60px;
-    margin-top: 5px;
+    /* margin-top: 5px; */
 
 }
 #headline{
    font-size: 20px;
    margin-left: 40vw;
+   margin-top: 20px;
 }
 
 .flex{
@@ -97,7 +98,9 @@ button{
     color:white;
     border:none;
     padding:15px;
-    width:150px
+    width:150px;
+    cursor: pointer;
+   
 }
 .table{
     background-color: #f5f5f5;
@@ -131,5 +134,38 @@ button{
 .signin{
     margin-top: 215px;
 }
+.hmove{
+    display: flex;
+    position: relative;
+    top:0;right: 0;
+    text-align: center;
+    padding-block: 15px;
+}
+.hslide{
+    width:100%;
+    flex-shrink: 0;
+   
+}
+.hwrap{
+    width: 100%;
+    height:50px;
+    overflow: hidden;
+    background-color: #3a2a7c;
+    color: white;
+    /* text-align: center; */
+   
+    
+}
 
+@keyframes slideh{
+    0% {right: 0% ;}
+    30% {right: 0% ;}
+    33% {right: 100% ;}
+    63% {right: 100% ;}
+    66% {right: 200% ;}
+    97% {right: 200% ;}
+    100% {right: 0% ;}
+}
+
+.hmove{animation: slideh linear 5s infinite;}
  
