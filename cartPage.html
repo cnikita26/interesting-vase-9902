@@ -329,7 +329,7 @@
             title.setAttribute("id","title")
 
             let mrp = document.createElement("p")
-            mrp.textContent=`Rs. ${ele.mrp}`
+            mrp.textContent=`₹. ${ele.mrp}`
             mrp.setAttribute("id","mrp")
 
             
@@ -349,11 +349,11 @@
             plusbtn.addEventListener("click",(e)=>{
                 e.preventDefault()
                 quantity.innerText++
-                price2.textContent= `Rs.${quantity.innerText*Number(ele.mrp)}`;
+                price2.textContent= `₹.${quantity.innerText*Number(ele.mrp)}`;
 
                 total+=Number(ele.mrp);
                 localStorage.setItem("total",total)
-                document.querySelector("#stotal").innerHTML=`Rs.${total}`
+                document.querySelector("#stotal").innerHTML=`₹.${total}`
                 
             })
             let quantity=document.createElement("span")
@@ -365,11 +365,11 @@
             minusbtn.addEventListener("click",(e)=>{
                 e.preventDefault()
                 quantity.innerText--
-                price2.textContent= `Rs.${quantity.innerText*Number(ele.mrp)}`;
+                price2.textContent= `₹.${quantity.innerText*Number(ele.mrp)}`;
 
                 total-=Number(ele.mrp);
                 localStorage.setItem("total",total)
-                document.querySelector("#stotal").innerHTML=`Rs.${total}`
+                document.querySelector("#stotal").innerHTML=`₹.${total}`
 
                 if(quantity.innerText<0){
                     quantity.innerText="0"
@@ -388,7 +388,7 @@
             })
 
             
-            price2.textContent= `Rs.${quantity.innerText*Number(ele.mrp)}`;
+            price2.textContent= `₹.${quantity.innerText*Number(ele.mrp)}`;
             
             let but=document.createElement("div")
             but.setAttribute("id","but")
@@ -409,7 +409,7 @@
             
             total+=Number(ele.mrp);
             localStorage.setItem("total",total)
-            document.querySelector("#stotal").innerHTML=`Rs.${total}`
+            document.querySelector("#stotal").innerHTML=`₹.${total}`
             
 
         })
