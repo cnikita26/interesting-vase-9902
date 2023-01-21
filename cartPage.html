@@ -6,27 +6,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Affordable Plus Size Clothing & Fashion for women | Femenines</title>
    <link rel="stylesheet" href="style.css" type="text/css">
-  
+    <style>
+        *{
+           font-family: sans-serif; 
+          
+        }
+        #lowcart{
+            margin-top: 300px;
+        }
+        #cart{
+            margin-top: 250px;
+        }
+        #checkout{
+            border-radius: 10px;
+            width: 250px;
+            height: 50px;
+            font-size: 15px;
+        }
+        #carttop{
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 100px;
+        }
+        #cartheader{
+            display: flex;
+            justify-content: flex-end;
+            gap: 200px;
+            margin-right: 200px;
+            font-weight: 700;
+        }
+        #cartheader1{
+            font-weight: 700;
+            margin-right: 300px;
+           
+        }
+        #hr{
+            width: 90%;
+            margin: auto;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        #down2{
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        #card{
+            display: flex;
+            width: 90%;
+            margin: auto;
+            margin-top: 20px;
+        }
+        #card #image{
+            width: 200px;
+            height: 100%;
+        }
+        #star{
+            color: goldenrod;         
+        }
+        #des{
+            padding: 20px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        #tabdiv{
+            
+            display: flex;
+            width: 580px;
+            justify-content: space-between;
+            margin-left: 440px;
+            margin-top: -100px;
+            align-items: center;
+            
+            
+        }
+        #plusbtn{
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            font-size: 12px;
+            margin: 0px 10px;
+        }
+        #minusbtn{
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            font-size: 12px;
+            margin: 0px 10px;
+        }
+        #rbutton{
+            border-radius: 12px;
+        }
+        #st{
+            font-size: 20px;
+            font-weight: 600;
+            margin-left: 980px;
+        }
+        #checkout1{
+            margin-left: 650px;
+            border-radius: 10px;
+            width: 250px;
+            height: 50px;
+            font-size: 15px;
+        }
+        #stotal{
+            margin-left: 150px;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
         <nav class="navbar">
             <h7 id="headline">Enjoy our great international shipping rates</h7>
-           
-          <div class="hwrap">
-            <div class="hmove">
-                <div class="hslide">
-                    <h7> SPRING PREVIEW UP TO 40% OFF NEW ARRIVALS | Details | View All Deals</h7>
-                </div>
-                <div class="hslide">
-                    <h7>SAVE $10, SIGN UP FOR CATHERINES REWARDS TODAY | Details | View All Deals </h7>
-                </div>
-                <div class="hslide">
-                    <h7>BEST OF WINTER SALE FROM $14.99 | Details | View All Deals</h7>
-                </div>
-              
-            </div>
-          </div>
+            
            <table class="allcont">
             <thead>
                 <tr class="image">
@@ -90,12 +182,38 @@
         </nav>
     </header>
 
-    <div class="signin">
-        <h1>YOUR SHOPPING BAG IS EMPTY</h1>
-        <h3>Sign in to see your saved items & check out.</h3>
-        <a href="login&registration.html"><button>SIGN IN</button></a>
+    <div id="cart">
+        <div id="carttop">
+            <h3>MY SHOPPING BAG</h3>
+            <button id="checkout">PROCEED TO CHECKOUT</button>
+        </div>
+        <div>
+            
+            <div id="cartheader">
+                <div id="cartheader1">
+                    <p>Products</p>
+                </div>
+                <p>Price</p> 
+                <p>Quantity</p>	 
+                <p>Subtotal</p>	
+            </div>
+        </div>
+        <hr id="hr">
+        <div id="cart-container">
+
+        </div>
+        <div>
+            <p id="st">Sub - Total : <span id="stotal"></span></p>
+        </div>
+        <div>
+            <button id="checkout1">PROCEED TO CHECKOUT</button>
+        </div>
+        
     </div>
-    <div >
+    
+
+
+    <div id="lowcart">
         <img id="first" src="Images\firstnew.png" alt="">
         <img id="first" src="Images\second.png" alt="">
     </div>
@@ -110,7 +228,7 @@
         </thead>
        <tbody class="body">
         <tr>
-            <td>Con/88tact Us</td>
+            <td>Contact Us</td>
             <td>Sign In/Register</td>
             <td>Apply Now</td>
             <td>About Us</td>
@@ -183,3 +301,127 @@
     <div> <a href="">admin</a></div>
 </body>
 </html>
+<script>
+    let cart_Items=JSON.parse(localStorage.getItem("cartdata")) || []
+    let count =Number(localStorage.getItem("Count") )|| 0;
+    let total=localStorage.getItem("total")|| 0;
+
+    let cartContainer=document.querySelector("#cart-container")
+    cartProducts(cart_Items)
+    console.log(cart_Items)
+
+    function cartProducts(data){
+        let total=0
+        cartContainer.innerHTML=null
+        data.forEach(function(ele){
+            let indivcard=document.createElement("div")
+            indivcard.setAttribute("id","indiv")
+
+            let card=document.createElement("div")
+            card.setAttribute("id","card")
+
+            let image = document.createElement("img")
+            image.setAttribute("src",ele.image)
+            image.setAttribute("id","image")
+
+            let title = document.createElement("p")
+            title.textContent=ele.title
+            title.setAttribute("id","title")
+
+            let mrp = document.createElement("p")
+            mrp.textContent=`Rs. ${ele.mrp}`
+            mrp.setAttribute("id","mrp")
+
+            
+
+            let rating = document.createElement("p")
+            rating.innerHTML=`Rating ${ele.rating}<span id ="star">&#9733</span>`
+            rating.setAttribute("id","rating")
+
+            let des=document.createElement("div")
+            des.setAttribute("id","des")
+
+            let price2 = document.createElement("p")
+
+            let plusbtn=document.createElement("button")
+            plusbtn.setAttribute("id","plusbtn")
+            plusbtn.innerText="+"
+            plusbtn.addEventListener("click",(e)=>{
+                e.preventDefault()
+                quantity.innerText++
+                price2.textContent= `Rs.${quantity.innerText*Number(ele.mrp)}`;
+
+                total+=Number(ele.mrp);
+                localStorage.setItem("total",total)
+                document.querySelector("#stotal").innerHTML=`Rs.${total}`
+                
+            })
+            let quantity=document.createElement("span")
+            quantity.innerText=1
+
+            let minusbtn=document.createElement("button")
+            minusbtn.setAttribute("id","minusbtn")
+            minusbtn.innerText="-"
+            minusbtn.addEventListener("click",(e)=>{
+                e.preventDefault()
+                quantity.innerText--
+                price2.textContent= `Rs.${quantity.innerText*Number(ele.mrp)}`;
+
+                total-=Number(ele.mrp);
+                localStorage.setItem("total",total)
+                document.querySelector("#stotal").innerHTML=`Rs.${total}`
+
+                if(quantity.innerText<0){
+                    quantity.innerText="0"
+                }
+                
+            })
+            
+            let button = document.createElement("button")
+            button.setAttribute("id","rbutton")
+                button.textContent="Remove"
+                button.addEventListener("click", function(){
+                    count--;
+                    localStorage.setItem("Count",count)
+                
+                    removeItem(ele)
+            })
+
+            
+            price2.textContent= `Rs.${quantity.innerText*Number(ele.mrp)}`;
+            
+            let but=document.createElement("div")
+            but.setAttribute("id","but")
+            but.append(plusbtn,quantity,minusbtn)
+
+            let tabdiv=document.createElement("div")
+            tabdiv.setAttribute("id","tabdiv")
+            tabdiv.append(mrp,but,price2)
+
+            let hr=document.createElement("hr")
+            hr.setAttribute("id","hr")
+
+            des.append(title,rating,button,tabdiv)
+            card.append(image,des)
+
+            indivcard.append(card,hr)
+            document.querySelector("#cart-container").append(indivcard)
+            
+            total+=Number(ele.mrp);
+            localStorage.setItem("total",total)
+            document.querySelector("#stotal").innerHTML=`Rs.${total}`
+            
+
+        })
+
+    }
+    function removeItem(ele){
+        cart_Items.splice(ele,1)
+        localStorage.setItem("cartdata",JSON.stringify(cart_Items))
+        cartProducts(cart_Items)
+        
+    }
+
+
+
+</script>
