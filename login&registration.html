@@ -206,9 +206,12 @@
 .signup_form .btn{
     margin-top:35px ;
 }
-.signup_login_form .btn input{
+.signup_login_form .btn button{
     border: none;
     font-size: 17px;
+    position: absolute;
+    height: 50px;
+    width: 370px;
     letter-spacing: 1px;
     font-weight: 500;
     border-radius: 4px;
@@ -217,9 +220,12 @@
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.signup_form .btn input{
+.signup_form .btn button{
     border: none;
     font-size: 17px;
+    position: absolute;
+    height: 50px;
+    width: 370px;
     letter-spacing: 1px;
     font-weight: 500;
     border-radius: 4px;
@@ -228,7 +234,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.btn input:hover{
+.btn button:hover{
     background-color:rgb(46, 21, 66) ;
 }
 .signup_login_form .add-info{
@@ -418,19 +424,19 @@
             <div class="login">
                 <span class="title">Welcome Back!</span>
                 <p>If you are a registered user, please enter your email and password</p>
-                <form action="#">
+                <form id="login_frm">
                     <div class="input-filed">
-                        <input type="email" placeholder="Email">
+                        <input type="email" id="eemail" placeholder="Email">
                     </div>
                     <div class="input-filed">
-                        <input type="password" class="password" placeholder="Password">
+                        <input type="password" id="epass" class="password" placeholder="Password">
                         <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
 
                     <!--Signin btn-->
 
                     <div class="input-filed btn">
-                        <input type="button" value="SIGN IN">
+                        <button>SIGN IN</button>
                     </div>
 
                     <!--Checkbox-->
@@ -483,7 +489,7 @@
                                 </div>
 
                                 <div class="input-filed btn">
-                                    <input type="button" value="LOOK UP">
+                                    <button>LOOK UP</button>
                                 </div>
                             </form>
                         </div>
@@ -501,7 +507,7 @@
             <div class="signup">
                 <span class="title">I'm a New Customer</span>
                 <p>Enjoy your benefits and get rewards.</p>
-                <form action="#" id="signup_frm">
+                <form id="signup_frm">
                     <div class="input-filed">
                         <input type="text" id="name" placeholder="First Name*">
                     </div>
@@ -566,7 +572,7 @@
                     <!--Signun btn-->
 
                     <div class="input-filed btn">
-                        <input type="button" value="CREATE ACCOUNT">
+                        <button>CREATE ACCOUNT</button>
                     </div>
 
                 </form>
@@ -670,7 +676,7 @@
 </body>
 <!-- js part -->
 <script>
-    let login = document.querySelector('.login_signup_cont')
+    
     let PwshowHide = document.querySelectorAll('.showHidePw')
     let pwfileds = document.querySelectorAll('.password')
 
@@ -694,6 +700,81 @@
             })
         })
     })
+
+    let userDetails=JSON.parse(localStorage.getItem("userdata"))
+    let myform = document.querySelector("#signup_frm")
+    let name = document.getElementById("name")
+    let lastname = document.getElementById("lname")
+    let email = document.getElementById("email")
+    let password = document.getElementById("pass")
+    let con_email = document.getElementById("c-email")
+    let con_pass = document.getElementById("c-pass")
+    let birthday_mnt = document.getElementById("month")
+    myform.addEventListener("submit",function(e){
+        e.preventDefault()
+        let formdata = {
+            name: myform.name.value,
+            lastname:myform.lname.value,
+            email:myform.email.value,
+            password:myform.pass.value,
+            con_email:myform.c-email.value,
+            con_pass:myform.c-pass.value,
+            birthday_mnt:myform.month.value
+
+        }
+        if(formdata.name == ""|| formdata.lastname == ""|| formdata.email == "" || formdata.password == ""|| formdata.con_email == ""|| formdata.con_pass == ""){
+            alert("Please Fill Given Details!" , " " , "error")
+        }
+        else{
+            userDetails.push(formdata)
+            localStorage.setItem("userdata",JSON.stringify(userDetails))
+            alert("Signup Succssesfull","Welcome to Catherin.com","success")
+
+            setTimeout(()=>{
+                window.location.href="index.html"
+            },2000)
+        }
+    })
+
+  // login 
+  let userdata = JSON.parse(localStorage.getItem("userdata"))
+    let form = document.querySelector("#login_frm")
+    form.addEventListener("submit",function(e){
+        e.preventDefault()
+        let email = document.getElementById("eemail")
+        let password = document.getElementById("epass")
+
+        let inputdata = {
+            eemail : form.eemail.value,
+            epassword : form.epass.value
+        }
+        userdata.forEach((element) => {
+
+             if(element.email == inputdata.eemail && element.password == inputdata.epassword){
+                alert("Login Succssesfull", "", "success");
+                setTimeout(()=>{
+                    window.location.href="index.html"
+                },2000)
+                
+            }
+            // else if(element.email == "admin@gmail.com" && element.password == "admin"){
+            //     alert("Login Succssesfull", "", "success");
+            //     setTimeout(()=>{
+            //         window.location.href="index.html"
+            //     },2000)
+            // }
+            
+            else{
+                
+                alert("Something Went Wrong! Please Fill Correct Details", "error")
+            }
+
+        });
+    })
+
+
+    
+
     
 
 </script>
