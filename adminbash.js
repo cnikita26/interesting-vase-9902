@@ -149,7 +149,7 @@ function appendPending(data){
         let title = document.createElement("h5")
         title.innerText = ele.title
         let price = document.createElement("p")
-        price.innerText =ele.original_price
+        price.innerText =ele.price
         let button = document.createElement("button")
         button.innerText = "Ship Order"
         button.addEventListener("click",()=>{
@@ -177,7 +177,7 @@ function appendComplete(data){
         let title = document.createElement("h5")
         title.innerText = ele.title
         let price = document.createElement("p")
-        price.innerText =ele.original_price
+        price.innerText =ele.price
         
         div.append(title,price)
         document.getElementById("complete").append(div)

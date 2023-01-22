@@ -161,11 +161,16 @@
                 </div>
             </div>
         </div>
-        <button><a href="#">Order Now</a></button>
+        <button id="paymentbtn"><a href="#">Order Now</a></button>
     </div>
     
 </body>
 <script>
-    
+    let cartdata = JSON.parse(localStorage.getItem('cartdata'))
+    document.getElementById('paymentbtn').addEventListener('click',()=>{
+        console.log('yes');
+        localStorage.setItem("pending-order",JSON.stringify(cartdata))
+        alert("ordered completed")
+    })
 </script>
 </html>
