@@ -64,6 +64,7 @@ let userdata = JSON.parse(localStorage.getItem("userdata"))||[]
 let form = document.querySelector("#login_frm")
 form.addEventListener("submit",function(e){
     e.preventDefault()
+    console.log('yes');
     // let email = document.getElementById("eemail")
     // let password = document.getElementById("epass")
 
@@ -71,27 +72,33 @@ form.addEventListener("submit",function(e){
         eemail : form.eemail.value,
         epassword : form.epass.value
     }
+    console.log(userdata);
+    console.log(inputdata);
+    let flag=true
     userdata.forEach((element) => {
-        
-         if(element.email == inputdata.eemail && element.password == inputdata.epassword ){
+        if(inputdata.eemail == "admin@gmail.com" && inputdata.epassword == "admin"){
+            console.log('inside admin');
             alert("Login Succssesfull", "", "success");
-            setTimeout(()=>{
-                window.location.href="index.html"
-            },2000)
-            
-        
+           // setTimeout(()=>{
+            let flag=false
+                window.location.href="admindash.html"
+                
+                
+           // },2000)
         }
-        // else if(element.email == "admin@gmail.com" && element.password == "admin"){
-        //     alert("Login Succssesfull", "", "success");
-        //     setTimeout(()=>{
-        //         window.location.href="index.html"
-        //     },2000)
-        // }
-        
-        else{
+        else if(element.email == inputdata.eemail && element.password == inputdata.epassword ){
+            alert("Login Succssesfull", "", "success");
+            //setTimeout(()=>{
+                let flag=false
+                window.location.href="index.html"
+            //},2000)
             
-            alert("Something Went Wrong! Please Fill Correct Details", "error")
+        
         }
 
     });
+    if(flag){
+            
+        alert("Something Went Wrong! Please Fill Correct Details", "error")
+    }
 })
