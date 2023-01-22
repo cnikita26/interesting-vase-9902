@@ -101,6 +101,53 @@
     /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
     font-size: 15px;
 }
+
+.types div a{
+    text-decoration: none;
+    color: black;
+}
+/* 
+.types div a:hover{
+    background-color: #3a2a7c;
+    color: #ffffff;
+} */
+
+
+.hmove{
+    display: flex;
+    position: relative;
+    top:0;right: 0;
+    text-align: center;
+    padding-block: 15px;
+}
+.hslide{
+    width:100%;
+    flex-shrink: 0;
+   
+}
+.hwrap{
+    width: 100%;
+    height:50px;
+    overflow: hidden;
+    background-color: #3a2a7c;
+    color: white;
+    /* text-align: center; */
+   
+    
+}
+
+@keyframes slideh{
+    0% {right: 0% ;}
+    30% {right: 0% ;}
+    33% {right: 100% ;}
+    63% {right: 100% ;}
+    66% {right: 200% ;}
+    97% {right: 200% ;}
+    100% {right: 0% ;}
+}
+
+.hmove{animation: slideh linear 5s infinite;}
+
 .login-signup-page{
     display: flex;
     justify-content: space-around;
@@ -341,10 +388,24 @@
 
 </style>
 <body>
-     <header class="header">
+    <header class="header">
         <nav class="navbar">
             <h7 id="headline">Enjoy our great international shipping rates</h7>
-            <!-- <script src="index.js"></script> -->
+           
+          <div class="hwrap">
+            <div class="hmove">
+                <div class="hslide">
+                    <h7> SPRING PREVIEW UP TO 40% OFF NEW ARRIVALS | Details | View All Deals</h7>
+                </div>
+                <div class="hslide">
+                    <h7>SAVE $10, SIGN UP FOR CATHERINES REWARDS TODAY | Details | View All Deals </h7>
+                </div>
+                <div class="hslide">
+                    <h7>BEST OF WINTER SALE FROM $14.99 | Details | View All Deals</h7>
+                </div>
+              
+            </div>
+          </div>
            <table class="allcont">
             <thead>
                 <tr class="image">
@@ -370,38 +431,38 @@
                 
             </div> -->
             <div class="left flex">
-                <a href="./index.html"><img id="logo" src="Images\js201 logo.jpg" alt=""></a>
+                <a href="index.html"><img id="logo" src="Images\js201 logo.jpg" alt=""></a>
                 <input id="input" type="text" placeholder="Keyword or catlog item#">
                 <div class="center">
                     <img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/Sites-oss-Site/-/default/dw93bd7266/images/common/icons/icon-catalog.svg?yocs=j_" alt="">
                    <p>CATALOG  </p>
                 </div>
                 <div class="center">
-                    <img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/Sites-oss-Site/-/default/dw3a534e16/images/common/icons/icon-card.svg?yocs=j_" alt="">
-                    <p>CARD</p>
+                    <a href="Payment.html"><img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/Sites-oss-Site/-/default/dw3a534e16/images/common/icons/icon-card.svg?yocs=j_" alt=""></a>
+                    <p><a href="Payment.html">CARD</a></p>
                 </div>
                 <div class="center">
-                    <img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/Sites-oss-Site/-/default/dw8fc793b7/images/common/icons/icon-account.svg?yocs=j_" alt="">
+                    <a href="login&registration.html"><img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/Sites-oss-Site/-/default/dw8fc793b7/images/common/icons/icon-account.svg?yocs=j_" alt=""></a>
                     <p><a href="login&registration.html">SIGN IN</a></p>
                 </div>
                 <div class="center">
-                    <img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/Sites-oss-Site/-/default/dw4c4b66fe/images/common/icons/icon-bag-filled.svg?yocs=j_" alt="">
-                    <p>MY BAG</p>
+                    <a href="cartPage.html"><img src="https://cdn-fsly.yottaa.net/5f90511cd93140f2cca8dcaa/www.catherines.com/v~4b.324/on/demandware.static/Sites-oss-Site/-/default/dw4c4b66fe/images/common/icons/icon-bag-filled.svg?yocs=j_" alt=""></a>
+                <p><a href="cartPage.html">MY BAG</a></p>
                 </div>
             </div>
             <div class="types">
-                <div>FEATURED</div>
-                <div>TOPS & SWEATERS</div>
-                <div>BOTTOMS</div>
-                <div>DRESSES</div>
-                <div>ACTIVE</div>
-                <div>COATS & JACKETS</div>
-                <div>SLEEPWEAR</div>
-                <div>BRAS & INTIMATES</div>
-                <div>SHOES & ACCESSORIES</div>
-                <div>SWIMWEAR</div>
-                <div>HOME</div>
-                <div>CLEARANCE</div>
+                <div><a href="ProductsPage.html">FEATURED</a></div>
+                <div><a href="ProductsPage.html">TOPS & SWEATERS</a></div>
+                <div><a href="ProductsPage.html">BOTTOMS</a></div>
+                <div><a href="ProductsPage.html">DRESSES</a></div>
+                <div><a href="ProductsPage.html">ACTIVE</a></div>
+                <div><a href="ProductsPage.html">COATS & JACKETS</a></div>
+                <div><a href="ProductsPage.html">SLEEPWEAR</a></div>
+                <div><a href="ProductsPage.html">BRAS & INTIMATES</a></div>
+                <div><a href="ProductsPage.html">SHOES & ACCESSORIES</a></div>
+                <div><a href="ProductsPage.html">SWIMWEAR</a></div>
+                <div><a href="ProductsPage.html">HOME</a></div>
+                <div><a href="ProductsPage.html">CLEARANCE</a></div>
                </div>
 
            </div>
